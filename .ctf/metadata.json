@@ -1,0 +1,15 @@
+{
+  "title": "Google CTF 2021: abc arm and amd",
+  "description": "Provide a payload of at most 280 printable bytes that prints the flag file on both x86-64 and arm64.",
+  "question": "Retrieve the flag from the challenge service.",
+  "category": "MISC",
+  "difficulty": 4,
+  "evidence_kind": "SECRET",
+  "capabilities": [
+    "shellcode",
+    "polyglot",
+    "alphanumeric",
+    "aarch64",
+    "x86-64"
+  ]
+}
