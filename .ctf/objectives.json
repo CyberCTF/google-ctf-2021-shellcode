@@ -1,0 +1,66 @@
+{
+  "objectives": [
+    {
+      "key": "main",
+      "title": "Earn the flag",
+      "prompt": "Pass both architecture tests with one payload; the service then prints the flag.",
+      "check": {
+        "evidence": "SECRET",
+        "format": "CTF{%s}"
+      },
+      "dev": "CTF{dev-google-ctf-2021-shellcode}",
+      "hints": [
+        "Find instruction bytes that are harmless on one architecture and branch on the other.",
+        "The flag's own text points at the arm64 system call instruction."
+      ],
+      "steps": [
+        {
+          "key": "arch",
+          "title": "Identify the second architecture",
+          "prompt": "Besides x86-64, on which architecture must the payload run?",
+          "check": {
+            "answer": [
+              "arm64",
+              "aarch64",
+              "arm",
+              "armv8"
+            ]
+          }
+        },
+        {
+          "key": "charset",
+          "title": "Know the constraint",
+          "prompt": "Which class of bytes is the payload limited to?",
+          "check": {
+            "answer": [
+              "printable",
+              "printable ascii",
+              "ascii",
+              "alphanumeric"
+            ]
+          }
+        },
+        {
+          "key": "length",
+          "title": "Know the size limit",
+          "prompt": "What is the maximum payload length in bytes?",
+          "check": {
+            "answer_regex": "^280$"
+          }
+        },
+        {
+          "key": "term",
+          "title": "Name the technique",
+          "prompt": "What do you call code that is valid and meaningful on several architectures at once?",
+          "check": {
+            "answer": [
+              "polyglot",
+              "polyglot shellcode",
+              "polyglot code"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
