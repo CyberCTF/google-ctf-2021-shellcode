@@ -1,8 +1,11 @@
 {
+  "project_name": "cyberlabs-google-ctf-2021-shellcode",
+  "slug": "google-ctf-2021-shellcode",
   "title": "Google CTF 2021: abc arm and amd",
   "description": "Provide a payload of at most 280 printable bytes that prints the flag file on both x86-64 and arm64.",
-  "question": "Write one payload that passes the tests on both architectures to get the flag.",
-  "category": "MISC",
+  "category": "misc",
   "difficulty": 3,
-  "evidence_kind": "SECRET"
+  "evidence_kind": "SECRET",
+  "capabilities": [],
+  "question": "Write one payload that passes the tests on both architectures to get the flag."
 }
